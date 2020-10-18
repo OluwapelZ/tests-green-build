@@ -63,11 +63,8 @@ There exists a CLI for the app that can be run with the `cli` script in the root
     - Main run script for application
 
 ## Environment Variables
-
 We use dotenv to handle environment variables for things like database credentials and the secret app key. A `.env.example` file is provided as a blueprint for values to input.
 
-### Troubleshooting
-
-- Circular dependency (`Nest can't resolve dependencies of the ...`)
-
-Circular dependencies and module dependencies in general are sometimes a struggle with Nest mainly due to a lack of debugging information that is printed out (although this has gotten better). If you are sure that a service you are trying to inject is available either via a global module or a module you've certainly imported it can be possible that there is a circular dependency that Nest isn't telling you about. Add a `@inject(forwardRef(() => ServiceYouAreTryingToInject))` to the constructor parameter to the service you're trying to inject and see if that fixes the problem.
+### Vote Of Thanks
+Thanks to Brian Schulte for providing a nice and clean boiler plate to kick-start this
+https://github.com/bschulte/nestjs-boilerplate
